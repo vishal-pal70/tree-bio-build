@@ -138,20 +138,20 @@ const LinkForm = ({ username, bio, link }: Props) => {
 
 
     const onProfileSubmit = async (data: ProfileFormData) => {
-    // try {
-    //   setProfile((prev) => ({ ...prev, ...data }));
+    try {
+      setProfile((prev) => ({ ...prev, ...data }));
 
-    //   const updatedProfile = await createUserProfile(data);
+      const updatedProfile = await createUserProfile(data);
 
-    //   console.log("Updated Profile:", updatedProfile);
-    //   toast.success("Profile updated successfully!");
-    // } catch (error) {
-    //   console.error("Error updating profile:", error);
-    //   toast.error("Failed to update profile.");
-    // } finally {
-    //   profileForm.reset();
-    //   setEditingProfile(false);
-    // }
+      console.log("Updated Profile:", updatedProfile);
+      toast.success("Profile updated successfully!");
+    } catch (error) {
+      console.error("Error updating profile:", error);
+      toast.error("Failed to update profile.");
+    } finally {
+      profileForm.reset();
+      setEditingProfile(false);
+    }
   };
 
     const onLinkSubmit = async (data: LinkFormData) => {
